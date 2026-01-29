@@ -48,3 +48,47 @@ time  value  rolling_avg_3
 If the data isn't ordered, last 3 rows not equals to last 3 time points and window jumps across time. Result is mathematically wrong, even if code runs.
 
 Summary: Lag features and rolling windows rely on ordered time because they assume earlier rows represent past observtions; without ordering, they can introduce data leakage or compute incorrect aggregates.
+
+# Glue Job and storing processed data in S3
+Create a Glue job, work on the Glue script to read the data from S3 bucket, process it and store the resultant dataset in processed folder in S3 bucket in Parquet format.
+After the data is processed, it is stored in the S3 bucket.
+file path: "s3://energy-consumption-forecasting-project/processed/pandas/pjme_energy_features.parquet"
+
+# Querying a data lake using SQL (without moving data)
+For this, I leveraged Glue Data Catalog + Athena
+At this point, the data is in S3 bucket in Parquet format. To query this wtih SQL, AWS needs metadata like column names, data types, S3 location. This metadata lives in the Glue Data Catalog. Then,
+Athenae = SQL Engine
+Glue Catalog = table definitions
+S3 = actual data
+
+1. Create a Glue database (logical container). In this case, its named as, "energy_forcasting_db"
+2. Create a Glue Table. In this case, the table is named as, "pjme_energy_features"
+3. Athena (SQL time)
+   - came across error, "Error fetching workgroup
+You are not authorized to perform: athena:GetWorkGroup on the resource. After your AWS administrator or you have updated your permissions, please try again."
+Have to add the permission to "athena:GetWorkGroup"
+4. Once I have some SQL queries results, I am now trying to visualize the data to answer some probable business question like,
+   "What does energy consumption look like over time, and what patterns exist?"
+5. For visualization, I am using Amazon QuickSight. Performed exploratory data analysis using Athena-backed QuickSight dashboards before training forecasting models.
+6. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
