@@ -70,7 +70,14 @@ Have to add the permission to "athena:GetWorkGroup"
 4. Once I have some SQL queries results, I am now trying to visualize the data to answer some probable business question like,
    "What does energy consumption look like over time, and what patterns exist?"
 5. For visualization, I am using Amazon QuickSight. Performed exploratory data analysis using Athena-backed QuickSight dashboards before training forecasting models.
-6. 
+
+# AWS SageMaker
+SageMaker Unified Studio is built on top of AWS DataZone.
+So for the first time, when I click "Set up Unified Studio", AWS internally does:
+- create a DataZone domain
+- create Projects
+- Set up governance resources
+That is admin-level infrastructure creation, not day-to-day ML work.
 
 
 
