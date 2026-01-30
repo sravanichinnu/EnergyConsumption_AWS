@@ -79,6 +79,11 @@ So for the first time, when I click "Set up Unified Studio", AWS internally does
 - Set up governance resources
 That is admin-level infrastructure creation, not day-to-day ML work.
 
+# Built a baseline model (XGBoost)
+Post fitting the model, after analyzing feature importance, I performed feature ablation by removing low-ranked features. This led to a higher RMSE, indicating that even low-importance calendar and volatility featured contributed to generalization. I therefor retained the full feature set for the final model.
+
+# Tuning hyperparameters
+
 
 
 
