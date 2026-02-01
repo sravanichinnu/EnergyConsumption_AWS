@@ -83,7 +83,19 @@ That is admin-level infrastructure creation, not day-to-day ML work.
 Post fitting the model, after analyzing feature importance, I performed feature ablation by removing low-ranked features. This led to a higher RMSE, indicating that even low-importance calendar and volatility featured contributed to generalization. I therefor retained the full feature set for the final model.
 
 # Tuning hyperparameters
+Hyperparameter tuning is the process of systematically choosing how a model learns, not what it learns, to balance accuracy, stability, and generalization.
+Different ways to hyperparameter tune:
+1. Manual/heuristic tuning (human-driven): In this one can change parameters based on intuition, experience, feature importance, past results.
+2. Grid Search (systematic & exhaustive):
+   - first, we define a grid of values
+   - then the algorithm tries every possible combination
+   - picks the best one based on a metric.
+3. Random Search (smarter than GridSearch): Instead of trying every combination, it randomly samples combinations and tries a fixed number of trials. Random search explores more variety with fewer trials.
+4. Bayesian Optimization (intelligent search): This learns from previous trials, predicts which hyperparameters to try next and focuses on promising regions. Think of it as "Smart guessing instead of brute force".
+5. Evolutionary / AutomML approaches: these are Genetic algorithms, population-based training, AutoML frameworks.
 
+For now, I am going with GridSearch, as it tries every possible combination.
+In plain words GridSearch means that, "I dont know the best hyperparameters, so I will define reasonable ranges and try every combination. I will keep track of performance and choose the best one".
 
 
 
