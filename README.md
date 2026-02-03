@@ -73,18 +73,6 @@ Model evaluation included:
 
 Error trends remained stable with no visible drift, indicating strong generalization on unseen data.
 
-## Repository Structure
-EnergyConsumption_AWS/
-├── data/ # Logical data layers (no raw data committed)
-├── glue/ # Production ETL scripts
-├── notebooks/ # Curated analysis & modeling notebooks
-├── models/ # Model outputs (artifacts stored in S3)
-├── sql/ # Athena table & view definitions
-├── screenshots/ # Dashboard and plot screenshots
-├── README.md
-└── .gitignore
----
-
 ## Notebooks Walkthrough
 
 | Notebook | Description |
