@@ -9,6 +9,7 @@ The goal is to accurately forecast hourly electricity demand and analyze predict
 ### Architecture Overview
 #### Tech stack & flow:
 Kaggle Dataset (PJM Hourly Load)
+        
         ↓
 Amazon S3 (Raw Layer)
         ↓
