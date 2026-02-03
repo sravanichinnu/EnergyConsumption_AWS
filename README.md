@@ -35,3 +35,97 @@ Raw and processed datasets are stored in **Amazon S3** and are intentionally not
 ## Feature Engineering
 
 The following features were engineered to capture temporal patterns:
+- **Lag features:** "lag_1", "lag_24", "lag_168"
+- **Rolling statistics:** 24-hour rolling mean and standard deviation
+- **Calendar features:** hour of day, day of week, month
+Feature importance analysis showed that **short-term and seasonal lags dominated**, confirming strong temporal autocorrelation in energy demand.
+
+## Modeling Approach
+
+### Baseline Model
+- **Algorithm:** XGBoost Regressor
+- **Evaluation Metrics:** MAE, RMSE
+- **Train/Test Split:** Time-based (no shuffling)
+
+### Hyperparameter tuning
+- **Method:** GridSearchCV
+- **Optimized Parameters:**
+  - "max_depth"
+  - "learning_rate"
+  - "subsample"
+  - colsample_bytree"
+  - "n_estimators"
+
+**Result:**
+Hyperparameter tuning reduced RMSE from **470.66 -> 429.36**, an improvement of approximately **8.8%**.
+
+### Model Comparison
+- **XGBoost:** RMSE ≈ 470 (baseline), 429 (tuned)
+- **LSTM:** Significantly higher RMSE due to limited sequence modeling and data scaling sensitivity.
+
+**Final Model Selected:** Tuned XGBoost Regressor
+
+## Evaluation & Error Analysis
+Model evaluation included:
+- Actual vs predicted energy demand plots
+- Absolute error trends over time
+- Error distribution analysis
+
+Error trends remained stable with no visible drift, indicating strong generalization on unseen data.
+
+## Repository Structure
+EnergyConsumption_AWS/
+├── data/ # Logical data layers (no raw data committed)
+├── glue/ # Production ETL scripts
+├── notebooks/ # Curated analysis & modeling notebooks
+├── models/ # Model outputs (artifacts stored in S3)
+├── sql/ # Athena table & view definitions
+├── screenshots/ # Dashboard and plot screenshots
+├── README.md
+└── .gitignore
+---
+
+## Notebooks Walkthrough
+
+| Notebook | Description |
+|-------|------------|
+| `01_data_ingestion_glue.ipynb` | Explains Glue-based ingestion and validates processed data |
+| `02_feature_engineering.ipynb` | Details feature engineering strategy |
+| `03_xgboost_training_tuning.ipynb` | Model training and hyperparameter tuning |
+| `04_model_evaluation_visualization.ipynb` | Metrics and visual diagnostics |
+
+## Key Takeaways
+
+- Demonstrates **end-to-end ML system design**, not just modeling
+- Uses AWS-native services for scalability and analytics integration
+- Shows practical decision-making (model selection, feature reduction, tuning)
+- Designed for both **technical and business stakeholders**
+
+## Future Enhancements
+
+- Add automated Glue job scheduling
+- Implement model versioning and registry
+- Explore probabilistic forecasting
+- Deploy model for real-time inference
+
+## Author
+
+**Sravani Namburu**  
+Data Engineer / Data Analyst  
+GitHub: https://github.com/sravanichinnu  
+LinkedIn: https://www.linkedin.com/in/sravani-namburu/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
