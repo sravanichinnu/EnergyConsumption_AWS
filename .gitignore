@@ -1,0 +1,14 @@
+# Data files
+*.csv
+*.parquet
+
+# Model artifacts
+*.pkl
+
+# Python cache
+__pycache__/
+.ipynb_checkpoints/
+
+# Environments & secrets
+.env
+
