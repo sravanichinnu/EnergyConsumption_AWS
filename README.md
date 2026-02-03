@@ -36,3 +36,26 @@ Kaggle Dataset (PJM Hourly Load) -> Amazon S3 (Raw Layer) -> AWS Glue (Pandas ET
 - Significantly underperformed due to scaling and data volume constraints
 - RMSE ≈ 31,000
 - Highlighted why tree-based models are often better for structured time-series tabular data
+
+### Model Evaluation & Error Analysis
+- Prediction vs actual demand visualization
+- Absolute error tracked over time
+- Mean and 95th percentile error baselines used to assess stability
+- Created Athena views for downstream BI and monitoring
+### key Insights
+- Showrt-term and seasonal lag features dominated model performance, confirming strong temporal autocorrelation in energy demand.
+
+### Visualization & Monitoring (QuickSight)
+Dashboards include:
+- Actual vs Predicted energy consumption
+- Absolute error trends over time
+- High-error spike detection
+- Forecast stability monitoring
+
+### AWS Services used
+- Amazon S3 - Data lake & model artifacts
+- AWS Glue - ETL and feature engineering
+- Amazon Athena - SQL analytics & views
+- Amazon QuickSight - BI dashboards
+- Amazon SageMaker - Model training & experimentation
+- IAM - Secure role-based access
