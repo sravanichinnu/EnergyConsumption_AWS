@@ -26,16 +26,13 @@ Kaggle Dataset (PJM Hourly Load) -> Amazon S3 (Raw Layer) -> AWS Glue (Pandas ET
 - Tree-based regression model optimized for time-series features
 - Hyperparameter tuning via GridSearchCV
 - Best parameters selected based on RMSE
-##### Final performance:
+#### Final performance:
  RMSE ≈ 470
  MAE ≈ 354
 
 ❌ LSTM (Comparison Model)
 
-Sequence-based neural network
-
-Significantly underperformed due to scaling and data volume constraints
-
-RMSE ≈ 31,000
-
-Highlighted why tree-based models are often better for structured time-series tabular data
+- Sequence-based neural network
+- Significantly underperformed due to scaling and data volume constraints
+- RMSE ≈ 31,000
+- Highlighted why tree-based models are often better for structured time-series tabular data
