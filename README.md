@@ -23,17 +23,12 @@ Kaggle Dataset (PJM Hourly Load) -> Amazon S3 (Raw Layer) -> AWS Glue (Pandas ET
 
 ✅ XGBoost (Final Model)
 
-Tree-based regression model optimized for time-series features
-
-Hyperparameter tuning via GridSearchCV
-
-Best parameters selected based on RMSE
-
-Final performance:
-
-RMSE ≈ 470
-
-MAE ≈ 354
+- Tree-based regression model optimized for time-series features
+- Hyperparameter tuning via GridSearchCV
+- Best parameters selected based on RMSE
+##### Final performance:
+ RMSE ≈ 470
+ MAE ≈ 354
 
 ❌ LSTM (Comparison Model)
 
