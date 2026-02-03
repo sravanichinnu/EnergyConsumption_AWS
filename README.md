@@ -5,3 +5,19 @@ This project implements an end-to-end energy consumption forecasting system usin
 It demonstrates the full lifecycle of a production-grade ML solution — from raw data ingestion to model training, evaluation, visualization, and monitoring — all built on AWS cloud services.
 
 The goal is to accurately forecast hourly electricity demand and analyze prediction errors over time to assess model reliability.
+
+### Architecture Overview
+#### Tech stack & flow:
+Kaggle Dataset (PJM Hourly Load)
+        ↓
+Amazon S3 (Raw Layer)
+        ↓
+AWS Glue (Pandas ETL → Parquet)
+        ↓
+Amazon Athena (SQL + Views)
+        ↓
+Amazon QuickSight (Visual Analytics)
+        ↓
+Amazon SageMaker (Model Training & Tuning)
+        ↓
+S3 (Predictions + Model Artifacts)
