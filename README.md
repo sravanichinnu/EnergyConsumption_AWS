@@ -5,7 +5,7 @@ The project demonstrates a production-oriented ML pipeline built on AWS, coverin
 
 ## 🚀 Business Impact
 
-The ~9% reduction in forecast error translates to improved demand planning precision, potentially reducing operational costs associated with energy imbalance and reserve over-allocation.
+By reducing forecast RMSE by ~9%, the model enhances demand planning precision, supporting more efficient energy allocation and potentially lowering costs associated with grid imbalance and reserve over-provisioning.
 
 ## Problem statement
 Accurate energy demand forecasting is critical for grid reliability, cost optimization, and resource planning. This project focuses on forecasting hourly energy consumption (MW) for the PJME region using historical load data and machine learning models.
