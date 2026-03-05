@@ -3,6 +3,10 @@
 End-to-end time-series forecasting project that predicts hourly electricity demand using historical PJME energy consumption dataset.
 The project demonstrates a production-oriented ML pipeline built on AWS, covering data ingestion, feature engineering, model training, evaluation, and business-facing visualization.
 
+## 🚀 Business Impact
+
+The ~9% reduction in forecast error translates to improved demand planning precision, potentially reducing operational costs associated with energy imbalance and reserve over-allocation.
+
 ## Problem statement
 Accurate energy demand forecasting is critical for grid reliability, cost optimization, and resource planning. This project focuses on forecasting hourly energy consumption (MW) for the PJME region using historical load data and machine learning models.
 
